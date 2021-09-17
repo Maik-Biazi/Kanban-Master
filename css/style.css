@@ -1,0 +1,193 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background-color: #D3D3D3;
+}
+
+#app {
+  margin-left: 100px;
+}
+#board {
+  margin-top: 60px;
+  display: flex;
+}
+#add-task-form {
+  position: absolute;
+  right: 100px;
+  top: 30px;
+  display: flex;
+}
+#add-task-form #task-value {
+  padding-left: 16px;
+  margin-top: 1px;
+  height: 46px;
+  width: 240px;
+  border-radius: 0px;
+  margin-right: 8px;
+  font-family: 'Lato';
+  font-size: 16px;
+  line-height: 19px;
+  border: none;
+}
+#add-task-form #task-value ::placeholder {
+  color: #E4E6E8;
+}
+#add-task-form #task-value:focus {
+  outline: 0;
+  box-shadow: 0px 4px 20px rgba(71, 134, 255, 0.5);
+}
+#add-task-form #add-task {
+  background: #4786FF;
+  border: none;
+  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  font-family: Lato;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+#add-task-form #add-task:focus {
+  outline: 0;
+}
+#add-task-form #add-task:hover {
+  box-shadow: 0px 4px 20px rgba(71, 134, 255, 0.5);
+}
+#columns {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  
+}
+.column {
+  flex: 0 0 auto;
+  width: 340px;
+ min-height: 370px;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 1px;
+  margin-left: 40px;
+  background-color: white;
+  
+  
+}
+.column:nth-child(1) {
+  margin-left: 0px;
+  
+}
+.column:hover {
+  border: 1px solid #696969;
+  box-shadow: 0px 1px 6px #696969;
+  
+  
+}
+.column-title {
+  
+ 
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: azure;
+  
+  
+  padding:15px;
+  
+  
+  
+}
+
+
+.task {
+  list-style-type: none;
+  margin: 16px 0px 0px 24px;
+  padding: 10px 8px 10px 10px;
+  position: relative;
+  background-color: white;
+  border: 1px solid #EBEDF0;
+  box-sizing: border-box;
+  border-radius: 2px;
+  min-height: 80px;
+  width: 288px;
+  background-color: #4786FF;
+  border-radius: 3px;
+  
+
+  
+}
+.task:nth-child(1) {
+  margin-top: 32px;
+}
+.task .task-content {
+  margin: 16px 16px 0 16px;
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: ivory
+  
+}
+.task:hover {
+  
+  border: 1px solid #BEBEBE;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 4px #4786FF;
+  border-radius: 2px;
+ 
+}
+.task .trash {
+  position: absolute;
+    bottom: 27px;
+    right: 20px;
+    font-family: 'Lato';
+    color: #54585A;
+    font-size: 18px;
+}
+.task .trash:hover {
+  color: #c42d1c;
+}
+.hold:active:hover {
+  border: solid 3px gray;
+}
+.hovered {
+  border-style: dashed;
+}
+.invisible {
+  display: none;
+}
+#resetTask{
+  margin-top:25px;
+ text-align: center;
+ 
+}
+#resetBtn{
+  padding: 5px;
+  width: 50%;
+  border-radius: 10px;
+  background: #4786FF;
+  font-size: 18px;
+  color: ivory;
+  letter-spacing: 3px;
+}
+#resetBtn:hover{
+  box-shadow: 0px 4px 20px rgba(71, 134, 255, 0.5);
+}

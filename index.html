@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    <script src="app.js" defer></script>
+    <title>Kanban</title>
+</head>
+
+<body>
+
+    <main id="app">
+        <section id="board">
+
+            <div id="add-task-form">
+                <input id="task-value" placeholder="Adicione uma nota">
+                <button id="add-task">+</button>
+            </div>
+        </section>
+        <section id="columns">
+            <div class="column dropzone">
+
+                <h3 class="column-title" style="background-color: #B22222;">A fazer</h3>
+
+                <ul class="tasks" id="tasks-added">
+
+                </ul>
+            </div>
+            <div class="column dropzone">
+                <h3 class="column-title" style="background-color: #FF8C00
+                ;">Fazendo</h3>
+            </div>
+
+            <div class="column dropzone">
+                <h3 class="column-title" style="background-color: #3CB371
+                ;">Feito</h3>
+            </div>
+            
+            
+        </section>
+        
+        
+    </main>
+    <div id="resetTask">
+        <button id="resetBtn" >Reset</button>
+    </div>
+    
+    
+</body>
+
+</html>
