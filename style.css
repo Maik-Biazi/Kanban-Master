@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Merriweather+Sans&display=swap');
+:root {
+  --cor-fazer: #C23A22;
+  --cor-fazer-secundaria: #FA4B48;
+  --cor-fazendo: #FFD203;
+  --cor-fazendo-secundaria: #FCDE00;
+  --cor-feito: #3CB371;
+  --cor-feito-secundaria: #09C497;
+  --cor-botao: #4786FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  background-color: #D3D3D3;
+}
+
+.wrapper {
+  width: 95vw;
+  max-width: 900px;
+  margin: 15vh auto;
+}
+
+/* Adiciona Tarefa */
+
+.container-adiciona-tarefa {
+  position: absolute;
+  top: 40px;
+  right: 110px;
+  display: flex;
+}
+
+.campo.adiciona-tarefa {
+  padding: 10px 20px;
+  border-radius: 6px;
+  width: 300px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  border: none;
+}
+
+.campo.adiciona-tarefa:focus {
+  outline: 0;
+  box-shadow: 0px 4px 20px rgba(71, 134, 255, 0.5);
+}
+
+.botao {
+  display: flex;
+  align-items: center;
+  background: var(--cor-botao);
+  border: none;
+  border-radius: 6px;
+  margin-left: 8px;
+  padding: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.botao:hover {
+  box-shadow: 0px 4px 20px rgba(71, 134, 255, 0.5);
+}
+
+
+/* Quadros */
+
+.container-quadros {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quadro {
+  width: 32%;
+  background-color: white;
+  border-radius: 6px;
+  font-family: 'Lobster', cursive;
+}
+
+.quadro:hover {
+  box-shadow: 0px 1px 6px #696969;
+}
+
+.titulo {
+  border-radius: 3px;
+  font-size: 1.5em;
+  font-weight: 800;
+  text-align: center;
+  padding: 15px 0;
+  text-shadow: 2px 3px 3px #CECECE;
+}
+
+.titulo.fazer {
+  background-color: var(--cor-fazer);
+}
+
+.titulo.fazendo {
+  background-color: var(--cor-fazendo);
+}
+
+.titulo.feito {
+  background-color: var(--cor-feito);
+}
+
+
+/* Tarefas */
+
+.lista-tarefas {
+  min-height: 40vh;
+  margin: 0 auto;
+  padding: 16px 7.5% 0 7.5%;
+}
+
+.quadro.fazer .tarefa {
+  background-color: var(--cor-fazer-secundaria);
+  box-shadow: 2px 2px 2px var(--cor-fazer-secundaria);
+}
+
+.quadro.fazendo .tarefa {
+  background-color: var(--cor-fazendo-secundaria);
+  box-shadow: 2px 2px 2px var(--cor-fazendo-secundaria);
+}
+
+.quadro.feito .tarefa {
+  background-color: var(--cor-feito-secundaria);
+  box-shadow: 2px 2px 2px var(--cor-feito-secundaria);
+}
+
+#tarefa-clone {
+  display: none;
+  position: absolute;
+}
+
+.tarefa {
+  position: relative;
+  min-height: 60px;
+  margin-bottom: 16px;
+  padding: 15px 30px 15px 20px;
+  border: 1px solid #EBEDF0;
+  border-radius: 4px;
+  color: ivory;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  cursor: grab;
+  transition: 1ms!important;
+}
+
+.tarefa:hover {
+  border-color: #BEBEBE;
+}
+
+.tarefa .botao-remover {
+  position: absolute;
+  margin-top: -12px;
+  top: 50%;
+  right: 5px;
+  cursor: pointer;
+}
+
+.tarefa .botao-remover:hover {
+  transition: 0.2s;
+  color: black;
+}
+
+.esconder {
+  visibility: hidden;
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(70, 72, 77, 0.5);
+  z-index: 10;
+}
+
+.modal-conteudo {
+  width: 80%;
+  color: red;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 600;
+}
+
+/* Queries */
+
+@media(max-width: 900px) {
+  .container-adiciona-tarefa {
+    right: 2.5vw;
+  }
+  .wrapper {
+    margin: 15vw auto;
+  }
+  .lista-tarefas {
+    min-height: 40vw;
+  }
+}
+
+@media(max-width: 400px) {
+  html {
+    font-size: 16px;
+  }
+  #mobile {
+    display: flex;
+  }
+  .campo.campo.adiciona-tarefa {
+    width: 50vw;
+  }
+  .container-quadros {
+    flex-direction: column;
+  }
+  .quadro {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Animação */
+
+.pulse {
+  animation: pulse;
+  animation-duration: .75s;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}

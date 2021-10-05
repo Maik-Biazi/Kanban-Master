@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-    <script src="app.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./favicon.jpg">
     <title>Kanban</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <main class="wrapper">
 
-    <main id="app">
-        <section id="board">
+      <modal class="modal" id="mobile">
+        <div class="modal-conteudo">Favor deitar a tela</div>
+      </modal>
 
-            <div id="add-task-form">
-                <input id="task-value" placeholder="Adicione uma nota">
-                <button id="add-task">+</button>
-            </div>
-        </section>
-        <section id="columns">
-            <div class="column dropzone">
+      <section class="container-adiciona-tarefa">
+        <input class="campo adiciona-tarefa" type="text" placeholder="Adicione uma tarefa">
+        <button class="botao adiciona-tarefa">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="botao reset">
+          <i class="material-icons">restart_alt</i> 
+        </button>
+      </section>
 
-                <h3 class="column-title" style="background-color: #B22222;">A fazer</h3>
+      <section class="container-quadros">
+        <div class="quadro fazer">
+          <h1 class="titulo fazer">A fazer</h1>
+          <ul class="lista-tarefas"></ul>
+        </div>
+        <div class="quadro fazendo">
+          <h1 class="titulo fazendo">Fazendo</h1>
+          <ul class="lista-tarefas"></ul>
+        </div>
+        <div class="quadro feito">
+          <h1 class="titulo feito">Feito</h1>
+          <ul class="lista-tarefas"></ul>
+        </div>
+      </section>
 
-                <ul class="tasks" id="tasks-added">
+      <div class="tarefa" id="tarefa-clone"></div>
 
-                </ul>
-            </div>
-            <div class="column dropzone">
-                <h3 class="column-title" style="background-color: #FF8C00
-                ;">Fazendo</h3>
-            </div>
-
-            <div class="column dropzone">
-                <h3 class="column-title" style="background-color: #3CB371
-                ;">Feito</h3>
-            </div>
-            
-            
-        </section>
-        
-        
     </main>
-    <div id="resetTask">
-        <button id="resetBtn" >Reset</button>
-    </div>
-    
-    
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
 
 </html>
